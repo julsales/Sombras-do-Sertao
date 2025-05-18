@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfpy6qwd4ki8c"]
+[gd_scene load_steps=4 format=3 uid="uid://bfpy6qwd4ki8c"]
 
 [ext_resource type="Texture2D" uid="uid://yuxc6upuvaow" path="res://Assets/UI/ImagemGameConfig.jpg" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dpy1pmywrrm5n" path="res://Card.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://0q0tbiapypgg" path="res://CardManager.gd" id="2_h2yge"]
 
 [node name="Main" type="Node2D"]
 
@@ -23,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ImagemGameConfig" type="Sprite2D" parent="UI/Background"]
-position = Vector2(579, 326)
+position = Vector2(-596, 330)
 scale = Vector2(0.723125, 0.708889)
 texture = ExtResource("1_ig7tw")
 
@@ -50,3 +52,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 value = 50.0
 fill_mode = 1
+
+[node name="CardManager" type="Node2D" parent="."]
+script = ExtResource("2_h2yge")
+
+[node name="Card" parent="CardManager" instance=ExtResource("2_0xm2m")]
+position = Vector2(153, 532)
+
+[node name="Card2" parent="CardManager" instance=ExtResource("2_0xm2m")]
+position = Vector2(269, 533)
