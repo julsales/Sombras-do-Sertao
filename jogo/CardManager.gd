@@ -2,6 +2,7 @@ extends Node2D
 var screen_size
 var dragging_card
 var is_hovering_on_card
+var player_hand_reference
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_CARD_SLOT = 2
 
@@ -9,6 +10,7 @@ const COLLISION_MASK_CARD_SLOT = 2
 #Pega o tamanho da tela do jogo
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
+	player_hand_reference = $"../PlayerHand"
 
 # Checa se o mouse está na carta e arrasta ela de acordo com o mouse,
 # também usa o clamp pra restringir a área de onde essa carta pode ir de acordo com a posição do mouse e a posição do tamanho da tela
@@ -40,9 +42,14 @@ func finish_drag():
 	dragging_card.scale = Vector2(1.05,1.05)
 	var card_slot_found = card_slot_raycast_check()
 	if card_slot_found and not card_slot_found.card_in_slot:
+		#Carta foi colocada em umm card slot vazio
+		player_hand_reference.remove_card_from_hand(dragging_card)
 		dragging_card.position = card_slot_found.position
 		dragging_card.get_node("Area2D/CollisionShape2D").disabled = true
 		card_slot_found.card_in_slot = true
+	else:
+		player_hand_reference.add_card_to_hand(dragging_card)
+		
 	dragging_card = null
 
 #conecta os sinais mandados por card.gd pra esse script, melhor para garantir que todas as cartas vão funcionar da mesma forma

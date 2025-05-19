@@ -11,13 +11,13 @@ script = ExtResource("1_hael8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1.19209e-07)
-scale = Vector2(0.135827, 0.125703)
+scale = Vector2(0.2, 0.185)
 texture = ExtResource("1_dd2wi")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 0)
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_hael8")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
