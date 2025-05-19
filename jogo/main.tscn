@@ -14,7 +14,11 @@ script = ExtResource("2_h2yge")
 script = ExtResource("5_7mycd")
 
 [node name="CardSlot" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(944, 442)
+position = Vector2(944, 551)
+
+[node name="CardSlot2" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(944, 176)
+rotation = -3.14159
 
 [node name="UI" type="CanvasLayer" parent="."]
 

@@ -6,7 +6,7 @@ const HAND_COUNT = 6
 const CARD_SCENE_PATH = "res://Scenes/Card.tscn"
 #Espaço entre as cartas
 const CARD_WIDTH = 200
-const HAND_Y_POSITION = 750
+const HAND_Y_POSITION = 800
 var player_hand = []
 var center_screen_x
 
@@ -39,7 +39,7 @@ func update_hand_positions():
 	
 func calculate_card_position(index):
 	var total_width = (player_hand.size() -1 ) * CARD_WIDTH
-	var x_offset = center_screen_x - total_width / 2 + index * CARD_WIDTH
+	var x_offset = (center_screen_x - total_width / 2 + index * CARD_WIDTH)
 	return x_offset
 	
 func animate_card_to_position(card, new_position):
