@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfpy6qwd4ki8c"]
+[gd_scene load_steps=6 format=3 uid="uid://bfpy6qwd4ki8c"]
 
 [ext_resource type="Texture2D" uid="uid://yuxc6upuvaow" path="res://Assets/UI/ImagemGameConfig.jpg" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://0q0tbiapypgg" path="res://CardManager.gd" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://sfkipi1ftlay" path="res://Scenes/CardSlot.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://dywl10glq7ymj" path="res://UI.gd" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://djme8ltff1kcp" path="res://PlayerHand.gd" id="5_7mycd"]
 
 [node name="Main" type="Node2D"]
@@ -20,7 +21,10 @@ position = Vector2(944, 551)
 position = Vector2(944, 176)
 rotation = -3.14159
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("4_lquwl")
 
 [node name="Background" type="Control" parent="UI"]
 layout_mode = 3
@@ -49,7 +53,7 @@ texture = ExtResource("1_ig7tw")
 
 [node name="BalanceBarContainer" type="Control" parent="UI"]
 custom_minimum_size = Vector2(600, 40)
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
