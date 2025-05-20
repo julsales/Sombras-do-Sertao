@@ -35,19 +35,19 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 13.0
-offset_top = -19.0
-offset_right = 1126.0
-offset_bottom = 585.0
+offset_left = 374.0
+offset_top = 53.0
+offset_right = 1487.0
+offset_bottom = 657.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ImagemGameConfig" type="Sprite2D" parent="UI/Background"]
+[node name="ImageGameConfig" type="Sprite2D" parent="UI/Background"]
 position = Vector2(-733, 308)
 scale = Vector2(0.723125, 0.708889)
 texture = ExtResource("1_ig7tw")
 
-[node name="EquilibrioBarContainer" type="Control" parent="UI"]
+[node name="BalanceBarContainer" type="Control" parent="UI"]
 custom_minimum_size = Vector2(600, 40)
 layout_mode = 3
 anchors_preset = 5
@@ -58,13 +58,13 @@ offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
 
-[node name="BarraRompedor" type="TextureProgressBar" parent="UI/EquilibrioBarContainer"]
+[node name="BreakerBar" type="TextureProgressBar" parent="UI/BalanceBarContainer"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 value = 50.0
 
-[node name="BarraMeninas" type="TextureProgressBar" parent="UI/EquilibrioBarContainer"]
+[node name="HarmonyBar" type="TextureProgressBar" parent="UI/BalanceBarContainer"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
