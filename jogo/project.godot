@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DisplayScaler="*res://Display_scaler.gd"
+DisplayScaler="*res://Scripts/Display_scaler.gd"
 
 [display]
 

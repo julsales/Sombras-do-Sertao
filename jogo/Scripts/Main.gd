@@ -4,7 +4,11 @@ var equilibrium := 50 # Valor inicial da barra (Luz 50 / Sombras 50)
 
 func _ready():
 	set_equilibrium(equilibrium)
+	
+func _on_exit_button_pressed() -> void:
+	get_tree().quit() 
 
+	
 # Atualiza as barras na tela com base no valor de equilibrium
 func set_equilibrium(value: int) -> void:
 	equilibrium = clamp(value, 0, 100)
