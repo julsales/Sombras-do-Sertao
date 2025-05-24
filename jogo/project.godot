@@ -27,6 +27,10 @@ window/size/mode=3
 window/stretch/mode="viewport"
 window/vsync/vsync_mode=0
 
+[gui]
+
+theme/custom_font="uid://vrn0mygpl1bo"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

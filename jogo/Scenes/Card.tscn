@@ -1,25 +1,42 @@
 [gd_scene load_steps=4 format=3 uid="uid://dpy1pmywrrm5n"]
 
-[ext_resource type="Texture2D" uid="uid://lmn7lu877hun" path="res://Assets/Images/Cards/card_example.svg" id="1_dd2wi"]
 [ext_resource type="Script" uid="uid://djqebrqd6r5yo" path="res://Scripts/Card.gd" id="1_hael8"]
+[ext_resource type="Texture2D" uid="uid://bmkdk10rb1qct" path="res://Assets/Images/Cards/Chinelo de Mãe.png" id="2_3p273"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hael8"]
-size = Vector2(83, 112)
+size = Vector2(1011.76, 1508.82)
 
 [node name="Card" type="Node2D"]
 position = Vector2(151, 560)
 script = ExtResource("1_hael8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -1.19209e-07)
-scale = Vector2(0.2, 0.185)
-texture = ExtResource("1_dd2wi")
+[node name="CardImage" type="Sprite2D" parent="."]
+position = Vector2(55.25, 64.875)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("2_3p273")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(1.5, 1.5)
+position = Vector2(55, 66.25)
+scale = Vector2(0.17, 0.17)
 shape = SubResource("RectangleShape2D_hael8")
+
+[node name="Points" type="RichTextLabel" parent="."]
+offset_left = 15.0
+offset_top = -42.0
+offset_right = 38.0
+offset_bottom = -18.0
+text = "0"
+
+[node name="Desc" type="RichTextLabel" parent="."]
+offset_left = -5.0
+offset_top = 122.0
+offset_right = 205.0
+offset_bottom = 196.0
+scale = Vector2(0.8, 0.8)
+text = "null"
+language = "pt_BR"
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

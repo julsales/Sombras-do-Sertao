@@ -3,6 +3,7 @@ var screen_size
 var dragging_card
 var is_hovering_on_card
 var player_hand_reference
+var card_preview
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_CARD_SLOT = 2
 const DEFAULT_CARD_SPEED = 0.1
@@ -13,6 +14,8 @@ func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	player_hand_reference = $"../PlayerHand"
 	$"../InputManager".connect("left_mouse_button_released", left_click_released)
+	card_preview = $"../CardPreview"
+	card_preview.visible = false
 # Checa se o mouse está na carta e arrasta ela de acordo com o mouse,
 # também usa o clamp pra restringir a área de onde essa carta pode ir de acordo com a posição do mouse e a posição do tamanho da tela
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -76,6 +79,7 @@ func hover_off_card(card):
 			highlight_card(hover_new_card, true)
 		else:
 			is_hovering_on_card = false
+			highlight_card(card,false)
 	
 func highlight_card(card, hovered):
 	if hovered:

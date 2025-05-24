@@ -27,9 +27,11 @@ extends Node2D
 
 const CARD_SCENE_PATH = "res://Scenes/Card.tscn"
 const CARD_DRAW_SPEED = 0.3
-var player_deck = ["Card", "Card", "Card", "Card", "Card", "Card", "Card", "Card", "Card", "Card"]
-
+var player_deck = ["Comadre Fulozinha", "Papa Figo", "Papa Figo", "Papa Figo", "Papa Figo", "Papa Figo","Papa Figo","Papa Figo"]
+var card_db
 func _ready() -> void:
+	player_deck.shuffle()
+	card_db = preload("res://Assets/DB/CardsDB.gd")
 	initial_draw(6)
 	$DeckCounter.text = str(player_deck.size())
 
@@ -54,6 +56,10 @@ func draw_card():
 	$DeckCounter.text = str(player_deck.size())
 	var card_scene = preload(CARD_SCENE_PATH)
 	var new_card = card_scene.instantiate()
+	var card_image_path = str("res://Assets/Images/Cards/" +card_drawn+ ".png")
+	new_card.get_node("CardImage").texture = load(card_image_path)
+	new_card.get_node("Points").text = str(card_db.CARDS[card_drawn][1])
+	new_card.get_node("Desc").text = str(card_db.CARDS[card_drawn][2])
 	$"../CardManager".add_child(new_card)
 	new_card.name = "Card"
 	$"../PlayerHand".add_card_to_hand(new_card, CARD_DRAW_SPEED)
