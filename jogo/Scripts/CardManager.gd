@@ -5,13 +5,14 @@ var is_hovering_on_card
 var player_hand_reference
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_CARD_SLOT = 2
+const DEFAULT_CARD_SPEED = 0.1
 
 # Called when the node enters the scene tree for the first time.
 #Pega o tamanho da tela do jogo
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	player_hand_reference = $"../PlayerHand"
-
+	$"../InputManager".connect("left_mouse_button_released", left_click_released)
 # Checa se o mouse está na carta e arrasta ela de acordo com o mouse,
 # também usa o clamp pra restringir a área de onde essa carta pode ir de acordo com a posição do mouse e a posição do tamanho da tela
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,16 +24,16 @@ func _process(delta: float) -> void:
 
 
 #Checa se o click esquerdo do mouse está ativo e chama a func do raycast pra saber se está clicando em uma carta, se sim, arrasta ela
-func _input(event):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
-			var card = card_raycast_check()
-			if card:
-				start_drag(card)
-		else:
-			if dragging_card:
-				finish_drag()
-			
+#func _input(event):
+	#if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		#if event.pressed:
+			#var card = card_raycast_check()
+			#if card:
+				#start_drag(card)
+		#else:
+			#if dragging_card:
+				#finish_drag()
+			#
 
 func start_drag(card):
 	dragging_card = card
@@ -42,13 +43,13 @@ func finish_drag():
 	dragging_card.scale = Vector2(1.05,1.05)
 	var card_slot_found = card_slot_raycast_check()
 	if card_slot_found and not card_slot_found.card_in_slot:
-		#Carta foi colocada em umm card slot vazio
+		#Carta foi colocada em um card slot vazio
 		player_hand_reference.remove_card_from_hand(dragging_card)
 		dragging_card.position = card_slot_found.position
 		dragging_card.get_node("Area2D/CollisionShape2D").disabled = true
 		card_slot_found.card_in_slot = true
 	else:
-		player_hand_reference.add_card_to_hand(dragging_card)
+		player_hand_reference.add_card_to_hand(dragging_card, DEFAULT_CARD_SPEED)
 		
 	dragging_card = null
 
@@ -56,6 +57,11 @@ func finish_drag():
 func connect_card_signals(card):
 	card.connect("hovered", hover_over_card)
 	card.connect("hovered_off", hover_off_card)
+	
+func left_click_released():
+	print("funciono")
+	if dragging_card:
+		finish_drag()
 	
 func hover_over_card(card):
 	if !is_hovering_on_card:

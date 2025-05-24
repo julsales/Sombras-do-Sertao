@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfpy6qwd4ki8c"]
+[gd_scene load_steps=10 format=3 uid="uid://bfpy6qwd4ki8c"]
 
 [ext_resource type="Script" uid="uid://b60cmcucmlmqm" path="res://Scripts/Main.gd" id="1_7mycd"]
 [ext_resource type="Texture2D" uid="uid://yuxc6upuvaow" path="res://Assets/UI/ImagemGameConfig.jpg" id="1_ig7tw"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://sfkipi1ftlay" path="res://Scenes/CardSlot.tscn" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://dywl10glq7ymj" path="res://Scripts/UI.gd" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://djme8ltff1kcp" path="res://Scripts/PlayerHand.gd" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bjawn0eg4gf6p" path="res://Scenes/deck.tscn" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://cpvfocks5cygh" path="res://Scenes/Deck.gd" id="6_kek77"]
+[ext_resource type="Script" uid="uid://binbtdjkhpa16" path="res://InputManager.gd" id="7_4c57u"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7mycd")
@@ -18,6 +21,20 @@ script = ExtResource("5_7mycd")
 
 [node name="CardSlot" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(944, 551)
+
+[node name="Deck" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(148, 560)
+script = ExtResource("6_kek77")
+
+[node name="InputManager" type="Node2D" parent="."]
+script = ExtResource("7_4c57u")
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 1820.0
+offset_top = 55.0
+offset_right = 1866.0
+offset_bottom = 101.0
+text = "X"
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -75,14 +92,6 @@ offset_bottom = 40.0
 value = 50.0
 fill_mode = 1
 
-[node name="ExitButton" type="Button" parent="UI"]
-layout_mode = 0
-offset_left = 1820.0
-offset_top = 55.0
-offset_right = 1866.0
-offset_bottom = 101.0
-text = "X"
-
 [node name="CardSlot2" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(944, 176)
 rotation = -3.14159
@@ -91,4 +100,4 @@ rotation = -3.14159
 wait_time = 3.0
 autostart = true
 
-[connection signal="pressed" from="UI/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

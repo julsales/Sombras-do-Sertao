@@ -1,0 +1,59 @@
+extends Node2D
+
+##Path das card scene
+#const CARD_SCENE_PATH = "res://Scenes/Card.tscn"
+#var player_deck = ["Card","Card"]
+#
+## Called when the node enters the scene tree for the first time.
+#func _ready() -> void:
+	#pass # Replace with function body.
+#
+#
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func draw_card():
+	#print("draw")
+	#var card_drawn = player_deck[0]
+	#player_deck.erase(card_drawn)
+	#
+	#if player_deck.size()==0:
+		#$Area2D/CollisionShape2D.disabled = true
+		#$Sprite2D.visible = false
+	#
+	#var card_scene = preload(CARD_SCENE_PATH)
+	#var new_card = card_scene.instantiate()
+	#$"../CardManager".add_child(new_card)
+	#new_card.name="Card"
+	#$"../PlayerHand".add_card_to_hand(new_card)
+
+const CARD_SCENE_PATH = "res://Scenes/Card.tscn"
+const CARD_DRAW_SPEED = 0.3
+var player_deck = ["Card", "Card", "Card", "Card", "Card", "Card", "Card", "Card", "Card", "Card"]
+
+func _ready() -> void:
+	initial_draw(6)
+	$DeckCounter.text = str(player_deck.size())
+
+func initial_draw(count: int):
+	for i in range(count):
+		if player_deck.size() > 0:
+			draw_card()
+
+func draw_card():
+	if player_deck.size() == 0:
+		return
+	
+	print("draw")
+	var card_drawn = player_deck[0]
+	player_deck.erase(card_drawn)
+	
+	if player_deck.size() == 0:
+		$Area2D/CollisionShape2D.disabled = true
+		$Sprite2D.visible = false
+		$DeckCounter.visible=false
+		
+	$DeckCounter.text = str(player_deck.size())
+	var card_scene = preload(CARD_SCENE_PATH)
+	var new_card = card_scene.instantiate()
+	$"../CardManager".add_child(new_card)
+	new_card.name = "Card"
+	$"../PlayerHand".add_card_to_hand(new_card, CARD_DRAW_SPEED)
