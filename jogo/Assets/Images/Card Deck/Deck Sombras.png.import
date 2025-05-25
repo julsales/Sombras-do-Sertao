@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmoxltrjjvg2a"
-path="res://.godot/imported/Papa Figo.png-54ec75d0a3958b9721564a8666045f33.ctex"
+uid="uid://nhmp1010qyy7"
+path="res://.godot/imported/Deck Sombras.png-eef99d84a63f7babb1028dbbb65bbc2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Cards/Papa Figo.png"
-dest_files=["res://.godot/imported/Papa Figo.png-54ec75d0a3958b9721564a8666045f33.ctex"]
+source_file="res://Assets/Images/Card Deck/Deck Sombras.png"
+dest_files=["res://.godot/imported/Deck Sombras.png-eef99d84a63f7babb1028dbbb65bbc2b.ctex"]
 
 [params]
 

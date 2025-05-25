@@ -27,11 +27,11 @@ extends Node2D
 
 const CARD_SCENE_PATH = "res://Scenes/Card.tscn"
 const CARD_DRAW_SPEED = 0.3
-var player_deck = ["Comadre Fulozinha", "Papa Figo", "Papa Figo", "Papa Figo", "Papa Figo", "Papa Figo","Papa Figo","Papa Figo"]
+var player_deck = ["Cuscuz", "Cuscuz","Cuscuz","Cuscuz","Cuscuz","Cuscuz","Cuscuz","Cuscuz","Cuscuz" ]
 var card_db
 func _ready() -> void:
 	player_deck.shuffle()
-	card_db = preload("res://Assets/DB/CardsDB.gd")
+	card_db = preload("res://Scripts/DB/CardsDB.gd")
 	initial_draw(6)
 	$DeckCounter.text = str(player_deck.size())
 

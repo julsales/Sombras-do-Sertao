@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmoxltrjjvg2a"
-path="res://.godot/imported/Papa Figo.png-54ec75d0a3958b9721564a8666045f33.ctex"
+uid="uid://c0ghuv8pp0scw"
+path="res://.godot/imported/card_slot.png-fe0c52be39880d50d52c77fce3360e82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Cards/Papa Figo.png"
-dest_files=["res://.godot/imported/Papa Figo.png-54ec75d0a3958b9721564a8666045f33.ctex"]
+source_file="res://Assets/Images/Card Slot/card_slot.png"
+dest_files=["res://.godot/imported/card_slot.png-fe0c52be39880d50d52c77fce3360e82.ctex"]
 
 [params]
 

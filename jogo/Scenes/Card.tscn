@@ -4,32 +4,32 @@
 [ext_resource type="Texture2D" uid="uid://bmkdk10rb1qct" path="res://Assets/Images/Cards/Chinelo de Mãe.png" id="2_3p273"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hael8"]
-size = Vector2(1011.76, 1508.82)
+size = Vector2(958.823, 1435.29)
 
 [node name="Card" type="Node2D"]
-position = Vector2(151, 560)
 script = ExtResource("1_hael8")
 
 [node name="CardImage" type="Sprite2D" parent="."]
-position = Vector2(55.25, 64.875)
-scale = Vector2(0.17, 0.17)
+z_index = -1
+scale = Vector2(0.16, 0.16)
 texture = ExtResource("2_3p273")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(55, 66.25)
 scale = Vector2(0.17, 0.17)
 shape = SubResource("RectangleShape2D_hael8")
 
 [node name="Points" type="RichTextLabel" parent="."]
-offset_left = 15.0
-offset_top = -42.0
-offset_right = 38.0
-offset_bottom = -18.0
+visible = false
+offset_left = 29.0
+offset_top = -37.0
+offset_right = 52.0
+offset_bottom = -13.0
 text = "0"
 
 [node name="Desc" type="RichTextLabel" parent="."]
+visible = false
 offset_left = -5.0
 offset_top = 122.0
 offset_right = 205.0

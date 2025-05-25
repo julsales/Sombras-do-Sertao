@@ -15,10 +15,6 @@ run/main_scene="uid://bfpy6qwd4ki8c"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-DisplayScaler="*res://Scripts/Display_scaler.gd"
-
 [display]
 
 window/size/viewport_width=1920
@@ -26,6 +22,12 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="viewport"
 window/vsync/vsync_mode=0
+
+[file_customization]
+
+folder_colors={
+"res://Assets/Images/": "red"
+}
 
 [gui]
 

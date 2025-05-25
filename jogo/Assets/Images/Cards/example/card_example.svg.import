@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b783wy7mwj18b"
-path="res://.godot/imported/card_slot.png-43b140057df7f7d675e86aee01734526.ctex"
+uid="uid://lmn7lu877hun"
+path="res://.godot/imported/card_example.svg-9b9a77b61d8788d0c95eea3daec85304.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Cards/card_slot.png"
-dest_files=["res://.godot/imported/card_slot.png-43b140057df7f7d675e86aee01734526.ctex"]
+source_file="res://Assets/Images/Cards/example/card_example.svg"
+dest_files=["res://.godot/imported/card_example.svg-9b9a77b61d8788d0c95eea3daec85304.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

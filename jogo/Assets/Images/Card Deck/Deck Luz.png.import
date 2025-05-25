@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lmn7lu877hun"
-path="res://.godot/imported/card_example.svg-a83fdeb691c18094c904415f810d0be2.ctex"
+uid="uid://tdobmpjafm8f"
+path="res://.godot/imported/Deck Luz.png-ef6f3d9034045b3bdd7da490f1e40026.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Cards/card_example.svg"
-dest_files=["res://.godot/imported/card_example.svg-a83fdeb691c18094c904415f810d0be2.ctex"]
+source_file="res://Assets/Images/Card Deck/Deck Luz.png"
+dest_files=["res://.godot/imported/Deck Luz.png-ef6f3d9034045b3bdd7da490f1e40026.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

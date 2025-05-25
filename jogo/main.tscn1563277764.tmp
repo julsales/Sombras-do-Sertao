@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://sfkipi1ftlay" path="res://Scenes/CardSlot.tscn" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://dywl10glq7ymj" path="res://Scripts/UI.gd" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://djme8ltff1kcp" path="res://Scripts/PlayerHand.gd" id="5_7mycd"]
-[ext_resource type="PackedScene" uid="uid://bjawn0eg4gf6p" path="res://Scenes/Deck.tscn" id="5_lquwl"]
-[ext_resource type="Script" uid="uid://cpvfocks5cygh" path="res://Scripts/Deck.gd" id="6_kek77"]
-[ext_resource type="Script" uid="uid://binbtdjkhpa16" path="res://Scripts/InputManager.gd" id="7_4c57u"]
+[ext_resource type="PackedScene" uid="uid://bjawn0eg4gf6p" path="res://Scenes/deck.tscn" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://cpvfocks5cygh" path="res://Scenes/Deck.gd" id="6_kek77"]
+[ext_resource type="Script" uid="uid://binbtdjkhpa16" path="res://InputManager.gd" id="7_4c57u"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7mycd")
@@ -28,10 +28,10 @@ script = ExtResource("2_h2yge")
 script = ExtResource("5_7mycd")
 
 [node name="CardSlot" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(953, 504)
+position = Vector2(944, 551)
 
 [node name="CardSlot2" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(947, 224)
+position = Vector2(944, 176)
 rotation = -3.14159
 
 [node name="Deck" parent="." instance=ExtResource("5_lquwl")]
@@ -49,7 +49,6 @@ offset_bottom = 101.0
 text = "X"
 
 [node name="UI" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
