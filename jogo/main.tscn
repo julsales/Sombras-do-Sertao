@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c2u0lxx6qu6c1" path="res://Scenes/Fundo.tscn" id="2_efxa6"]
 [ext_resource type="Script" uid="uid://0q0tbiapypgg" path="res://Scripts/CardManager.gd" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bsv2ox1kwotyi" path="res://Scenes/EnemyCardSlot.tscn" id="3_efxa6"]
-[ext_resource type="PackedScene" uid="uid://sfkipi1ftlay" path="res://Scenes/CardSlot.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" path="res://Scenes/CardSlot.tscn" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://dywl10glq7ymj" path="res://Scripts/UI.gd" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://djme8ltff1kcp" path="res://Scripts/PlayerHand.gd" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bjawn0eg4gf6p" path="res://Scenes/Deck.tscn" id="5_lquwl"]
@@ -15,31 +15,15 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7mycd")
 
-[node name="Fundo" parent="." instance=ExtResource("2_efxa6")]
-z_index = -4
-position = Vector2(938, 537)
-
 [node name="CardSlots" type="Node2D" parent="."]
 
 [node name="CardSlot" parent="CardSlots" instance=ExtResource("4_1bvp3")]
-position = Vector2(1047, 486)
+position = Vector2(969, 628)
 scale = Vector2(0.9, 0.9)
 
-[node name="CardSlot2" parent="CardSlots" instance=ExtResource("4_1bvp3")]
-position = Vector2(854, 486)
-rotation = -3.14159
+[node name="EnemyCardSlot" parent="CardSlots" instance=ExtResource("3_efxa6")]
+position = Vector2(964, 420)
 scale = Vector2(0.9, 0.9)
-
-[node name="CardSlot3" parent="CardSlots" instance=ExtResource("3_efxa6")]
-position = Vector2(940, 219)
-scale = Vector2(0.9, 0.9)
-
-[node name="EndTurnButton" type="Button" parent="."]
-offset_left = 854.0
-offset_top = 631.0
-offset_right = 1047.0
-offset_bottom = 696.0
-text = "Finalizar turno"
 
 [node name="CardPreview" type="Control" parent="."]
 layout_mode = 3
@@ -57,22 +41,45 @@ script = ExtResource("2_h2yge")
 script = ExtResource("5_7mycd")
 
 [node name="Deck" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(199, 500)
-scale = Vector2(0.8, 0.8)
+position = Vector2(663, 626)
+scale = Vector2(0.9, 0.9)
 script = ExtResource("6_kek77")
+
+[node name="EndTurnButton" type="Button" parent="."]
+z_index = 4
+texture_filter = 1
+offset_left = 1107.0
+offset_top = 459.0
+offset_right = 1300.0
+offset_bottom = 524.0
+scale = Vector2(1.5, 1.5)
+text = "Finalizar turno"
+
+[node name="OpponentDeck" type="Node2D" parent="."]
+scale = Vector2(0.9, 0.9)
+
+[node name="Sprite2D" type="Sprite2D" parent="OpponentDeck"]
+z_index = -2
+position = Vector2(736.667, 466.667)
+scale = Vector2(0.132, 0.13)
+texture = ExtResource("11_dg77c")
+
+[node name="DeckCounter" type="RichTextLabel" parent="OpponentDeck"]
+visible = false
+modulate = Color(0.280555, 0.246657, 0.141675, 1)
+z_index = -2
+offset_left = 231.25
+offset_top = 273.75
+offset_right = 271.25
+offset_bottom = 313.75
+scale = Vector2(3, 3)
+text = "0"
+metadata/_edit_use_anchors_ = true
 
 [node name="InputManager" type="Node2D" parent="."]
 script = ExtResource("7_4c57u")
 
-[node name="ExitButton" type="Button" parent="."]
-offset_left = 1820.0
-offset_top = 55.0
-offset_right = 1866.0
-offset_bottom = 101.0
-text = "X"
-
 [node name="UI" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -92,16 +99,24 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 374.0
-offset_top = 53.0
-offset_right = 1487.0
-offset_bottom = 657.0
+offset_left = 358.0
+offset_top = 149.0
+offset_right = 1471.0
+offset_bottom = 753.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="ImageGameConfig" type="Sprite2D" parent="UI/Background"]
 position = Vector2(-733, 308)
 scale = Vector2(0.723125, 0.708889)
+metadata/_edit_lock_ = true
+
+[node name="Fundo" parent="UI/Background" instance=ExtResource("2_efxa6")]
+z_index = -6
+position = Vector2(965, 534)
+
+[node name="Camera2D" type="Camera2D" parent="UI/Background/Fundo"]
 
 [node name="BalanceBarContainer" type="Control" parent="UI"]
 custom_minimum_size = Vector2(600, 40)
@@ -113,6 +128,7 @@ offset_left = -320.0
 offset_right = 280.0
 offset_bottom = 40.0
 grow_horizontal = 2
+metadata/_edit_lock_ = true
 
 [node name="BreakerBar" type="TextureProgressBar" parent="UI/BalanceBarContainer"]
 layout_mode = 0
@@ -127,29 +143,15 @@ offset_bottom = 40.0
 value = 50.0
 fill_mode = 1
 
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 1820.0
+offset_top = 55.0
+offset_right = 1866.0
+offset_bottom = 101.0
+text = "X"
+
 [node name="AITimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
-
-[node name="OpponentDeck" type="Node2D" parent="."]
-scale = Vector2(0.8, 0.8)
-
-[node name="Sprite2D" type="Sprite2D" parent="OpponentDeck"]
-z_index = -2
-position = Vector2(247.5, 311.25)
-scale = Vector2(0.132, 0.13)
-texture = ExtResource("11_dg77c")
-
-[node name="DeckCounter" type="RichTextLabel" parent="OpponentDeck"]
-visible = false
-modulate = Color(0.280555, 0.246657, 0.141675, 1)
-z_index = -2
-offset_left = 231.25
-offset_top = 273.75
-offset_right = 271.25
-offset_bottom = 313.75
-scale = Vector2(3, 3)
-text = "0"
-metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
