@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://sfkipi1ftlay"]
+[gd_scene load_steps=11 format=3 uid="uid://sfkipi1ftlay"]
 
 [ext_resource type="Script" uid="uid://ciid8h4trrfyi" path="res://Scripts/CardSlot.gd" id="1_r3qn0"]
 [ext_resource type="Texture2D" uid="uid://c0ghuv8pp0scw" path="res://Assets/Images/Card Slot/card_slot.png" id="2_r3qn0"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://di8u2rrknjaur" path="res://Assets/UI/UnbalanceBar.png" id="4_jf1lf"]
 [ext_resource type="Texture2D" uid="uid://dv1h8i5aou32l" path="res://Assets/UI/Balance.png" id="5_w5bvl"]
 [ext_resource type="Texture2D" uid="uid://c2606g8ovohde" path="res://Assets/UI/Unibalance.png" id="6_j8f3g"]
-[ext_resource type="Texture2D" uid="uid://l4g3i6bxuto6" path="res://Assets/UI/background.png" id="7_j8f3g"]
 [ext_resource type="Texture2D" uid="uid://i7tk1rqdcttw" path="res://Assets/UI/shadow protagonist.png" id="8_a0w1c"]
 [ext_resource type="Texture2D" uid="uid://b34gqx1gvncw8" path="res://Assets/UI/light protagonist.png" id="9_6sovm"]
 [ext_resource type="Texture2D" uid="uid://70tepkam2syc" path="res://Assets/UI/breaker.png" id="10_6sovm"]
@@ -16,10 +15,6 @@ size = Vector2(1447.44, 2063.14)
 
 [node name="CardSlot" type="Node2D"]
 script = ExtResource("1_r3qn0")
-
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(1, 6)
-texture = ExtResource("7_j8f3g")
 
 [node name="CardSlot" type="Sprite2D" parent="."]
 z_index = -3
@@ -35,39 +30,43 @@ z_index = -2
 scale = Vector2(0.095, 0.095)
 shape = SubResource("RectangleShape2D_mt86f")
 
-[node name="BalanceBar" type="Sprite2D" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BalanceBar" type="Sprite2D" parent="NinePatchRect"]
 position = Vector2(-637, -270)
 scale = Vector2(0.5, 0.559524)
 texture = ExtResource("3_l1y1a")
 
-[node name="UnbalanceBar" type="Sprite2D" parent="."]
+[node name="UnbalanceBar" type="Sprite2D" parent="NinePatchRect"]
 position = Vector2(657, -279)
 scale = Vector2(0.439484, 0.442982)
 texture = ExtResource("4_jf1lf")
 
-[node name="Balance" type="Sprite2D" parent="."]
+[node name="Balance" type="Sprite2D" parent="NinePatchRect"]
 position = Vector2(658, -278)
 scale = Vector2(0.415743, 0.45045)
 texture = ExtResource("5_w5bvl")
 
-[node name="Unibalance" type="Sprite2D" parent="."]
+[node name="Unibalance" type="Sprite2D" parent="NinePatchRect"]
 position = Vector2(-635, -266)
 scale = Vector2(0.429687, 0.490991)
 texture = ExtResource("6_j8f3g")
 
-[node name="ShadowProtagonist" type="Sprite2D" parent="."]
+[node name="ShadowProtagonist" type="Sprite2D" parent="NinePatchRect"]
 position = Vector2(683, 121)
 scale = Vector2(0.195782, 0.157364)
 texture = ExtResource("8_a0w1c")
 
-[node name="LightProtagonist" type="Sprite2D" parent="."]
+[node name="LightProtagonist" type="Sprite2D" parent="NinePatchRect"]
 position = Vector2(-653, 96)
 scale = Vector2(0.13838, 0.115953)
 texture = ExtResource("9_6sovm")
 
-[node name="Breaker" type="Sprite2D" parent="."]
+[node name="Breaker" type="Sprite2D" parent="NinePatchRect"]
 position = Vector2(-4.76837e-07, -358)
 scale = Vector2(0.0968533, 0.0789352)
 texture = ExtResource("10_6sovm")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="NinePatchRect"]
