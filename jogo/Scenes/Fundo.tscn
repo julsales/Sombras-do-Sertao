@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2u0lxx6qu6c1"]
+[gd_scene load_steps=13 format=3 uid="uid://c2u0lxx6qu6c1"]
 
 [ext_resource type="Texture2D" uid="uid://l4g3i6bxuto6" path="res://Assets/UI/background.png" id="2_22bns"]
 [ext_resource type="Texture2D" uid="uid://cvb3oll5gg5xj" path="res://Assets/UI/BalanceBar.png" id="4_d24uq"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b34gqx1gvncw8" path="res://Assets/UI/light protagonist.png" id="9_hb2m2"]
 [ext_resource type="Texture2D" uid="uid://3xwjk20von6y" path="res://Assets/UI/Icon1.png" id="10_07kdr"]
 [ext_resource type="Texture2D" uid="uid://70tepkam2syc" path="res://Assets/UI/breaker.png" id="10_fm8l8"]
+[ext_resource type="Texture2D" uid="uid://p2kby1rdpnb6" path="res://Assets/UI/Deckcards.png" id="11_22bns"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0mck7"]
 
@@ -85,3 +86,13 @@ texture = ExtResource("10_07kdr")
 position = Vector2(-533, 439)
 scale = Vector2(0.258958, 0.238354)
 texture = ExtResource("10_07kdr")
+
+[node name="Names3" type="Sprite2D" parent="."]
+position = Vector2(-4, -476.75)
+scale = Vector2(0.377919, 0.385838)
+texture = ExtResource("9_7jg37")
+
+[node name="Deckcards" type="Sprite2D" parent="."]
+position = Vector2(-3, -245)
+scale = Vector2(0.111716, 0.0702082)
+texture = ExtResource("11_22bns")
