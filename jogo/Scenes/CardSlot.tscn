@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 [gd_scene load_steps=11 format=3 uid="uid://sfkipi1ftlay"]
+=======
+[gd_scene load_steps=4 format=3 uid="uid://sfkipi1ftlay"]
+>>>>>>> 3f4f74d21651874f5f520849f6b0b49e827bfa98
 
-[ext_resource type="Script" uid="uid://ciid8h4trrfyi" path="res://Scripts/CardSlot.gd" id="1_r3qn0"]
+[ext_resource type="Script" uid="uid://ciid8h4trrfyi" path="res://Scripts/PlayerSlot.gd" id="1_r3qn0"]
 [ext_resource type="Texture2D" uid="uid://c0ghuv8pp0scw" path="res://Assets/Images/Card Slot/card_slot.png" id="2_r3qn0"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://cvb3oll5gg5xj" path="res://Assets/UI/BalanceBar.png" id="3_l1y1a"]
 [ext_resource type="Texture2D" uid="uid://di8u2rrknjaur" path="res://Assets/UI/UnbalanceBar.png" id="4_jf1lf"]
 [ext_resource type="Texture2D" uid="uid://dv1h8i5aou32l" path="res://Assets/UI/Balance.png" id="5_w5bvl"]
@@ -9,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://i7tk1rqdcttw" path="res://Assets/UI/shadow protagonist.png" id="8_a0w1c"]
 [ext_resource type="Texture2D" uid="uid://b34gqx1gvncw8" path="res://Assets/UI/light protagonist.png" id="9_6sovm"]
 [ext_resource type="Texture2D" uid="uid://70tepkam2syc" path="res://Assets/UI/breaker.png" id="10_6sovm"]
+=======
+>>>>>>> 3f4f74d21651874f5f520849f6b0b49e827bfa98
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mt86f"]
 size = Vector2(1447.44, 2063.14)
@@ -29,6 +36,7 @@ collision_mask = 2
 z_index = -2
 scale = Vector2(0.095, 0.095)
 shape = SubResource("RectangleShape2D_mt86f")
+<<<<<<< HEAD
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 offset_right = 40.0
@@ -70,3 +78,5 @@ scale = Vector2(0.0968533, 0.0789352)
 texture = ExtResource("10_6sovm")
 
 [node name="Camera2D" type="Camera2D" parent="NinePatchRect"]
+=======
+>>>>>>> 3f4f74d21651874f5f520849f6b0b49e827bfa98

@@ -1,23 +1,47 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfpy6qwd4ki8c"]
+[gd_scene load_steps=11 format=3 uid="uid://bfpy6qwd4ki8c"]
 
 [ext_resource type="Script" uid="uid://b60cmcucmlmqm" path="res://Scripts/Main.gd" id="1_7mycd"]
-[ext_resource type="Texture2D" uid="uid://yuxc6upuvaow" path="res://Assets/ImagemGameConfig.jpg" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://0q0tbiapypgg" path="res://Scripts/CardManager.gd" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bsv2ox1kwotyi" path="res://Scenes/EnemyCardSlot.tscn" id="3_efxa6"]
 [ext_resource type="PackedScene" uid="uid://sfkipi1ftlay" path="res://Scenes/CardSlot.tscn" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://dywl10glq7ymj" path="res://Scripts/UI.gd" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://djme8ltff1kcp" path="res://Scripts/PlayerHand.gd" id="5_7mycd"]
-[ext_resource type="PackedScene" uid="uid://bjawn0eg4gf6p" path="res://Scenes/deck.tscn" id="5_lquwl"]
-[ext_resource type="Script" path="res://Scripts/Deck.gd" id="6_kek77"]
-[ext_resource type="Script" path="res://Scripts/InputManager.gd" id="7_4c57u"]
+[ext_resource type="PackedScene" uid="uid://bjawn0eg4gf6p" path="res://Scenes/Deck.tscn" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://cpvfocks5cygh" path="res://Scripts/Deck.gd" id="6_kek77"]
+[ext_resource type="Script" uid="uid://binbtdjkhpa16" path="res://Scripts/InputManager.gd" id="7_4c57u"]
+[ext_resource type="Texture2D" uid="uid://nhmp1010qyy7" path="res://Assets/Images/Card Deck/Deck Sombras.png" id="11_dg77c"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7mycd")
+
+[node name="CardSlots" type="Node2D" parent="."]
+
+[node name="CardSlot" parent="CardSlots" instance=ExtResource("4_1bvp3")]
+position = Vector2(1047, 486)
+scale = Vector2(0.9, 0.9)
+
+[node name="CardSlot2" parent="CardSlots" instance=ExtResource("4_1bvp3")]
+position = Vector2(854, 486)
+rotation = -3.14159
+scale = Vector2(0.9, 0.9)
+
+[node name="CardSlot3" parent="CardSlots" instance=ExtResource("3_efxa6")]
+position = Vector2(940, 219)
+scale = Vector2(0.9, 0.9)
+
+[node name="EndTurnButton" type="Button" parent="."]
+offset_left = 854.0
+offset_top = 631.0
+offset_right = 1047.0
+offset_bottom = 696.0
+text = "Finalizar turno"
 
 [node name="CardPreview" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="CardImage" type="Sprite2D" parent="CardPreview"]
 
@@ -27,15 +51,9 @@ script = ExtResource("2_h2yge")
 [node name="PlayerHand" type="Node2D" parent="."]
 script = ExtResource("5_7mycd")
 
-[node name="CardSlot" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(953, 504)
-
-[node name="CardSlot2" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(947, 224)
-rotation = -3.14159
-
 [node name="Deck" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(148, 560)
+position = Vector2(199, 500)
+scale = Vector2(0.8, 0.8)
 script = ExtResource("6_kek77")
 
 [node name="InputManager" type="Node2D" parent="."]
@@ -79,7 +97,6 @@ grow_vertical = 2
 [node name="ImageGameConfig" type="Sprite2D" parent="UI/Background"]
 position = Vector2(-733, 308)
 scale = Vector2(0.723125, 0.708889)
-texture = ExtResource("1_ig7tw")
 
 [node name="BalanceBarContainer" type="Control" parent="UI"]
 custom_minimum_size = Vector2(600, 40)
@@ -108,5 +125,26 @@ fill_mode = 1
 [node name="AITimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="OpponentDeck" type="Node2D" parent="."]
+scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="OpponentDeck"]
+z_index = -2
+position = Vector2(247.5, 311.25)
+scale = Vector2(0.132, 0.13)
+texture = ExtResource("11_dg77c")
+
+[node name="DeckCounter" type="RichTextLabel" parent="OpponentDeck"]
+visible = false
+modulate = Color(0.280555, 0.246657, 0.141675, 1)
+z_index = -2
+offset_left = 231.25
+offset_top = 273.75
+offset_right = 271.25
+offset_bottom = 313.75
+scale = Vector2(3, 3)
+text = "0"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

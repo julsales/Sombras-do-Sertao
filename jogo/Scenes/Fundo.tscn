@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2u0lxx6qu6c1"]
+
+[ext_resource type="Texture2D" uid="uid://l4g3i6bxuto6" path="res://Assets/UI/background.png" id="2_22bns"]
+[ext_resource type="Texture2D" uid="uid://cvb3oll5gg5xj" path="res://Assets/UI/BalanceBar.png" id="4_d24uq"]
+[ext_resource type="Texture2D" uid="uid://di8u2rrknjaur" path="res://Assets/UI/UnbalanceBar.png" id="5_7k4fy"]
+[ext_resource type="Texture2D" uid="uid://dv1h8i5aou32l" path="res://Assets/UI/Balance.png" id="6_wdd78"]
+[ext_resource type="Texture2D" uid="uid://c2606g8ovohde" path="res://Assets/UI/Unibalance.png" id="7_nf0jx"]
+[ext_resource type="Texture2D" uid="uid://i7tk1rqdcttw" path="res://Assets/UI/shadow protagonist.png" id="8_da0dw"]
+[ext_resource type="Texture2D" uid="uid://b34gqx1gvncw8" path="res://Assets/UI/light protagonist.png" id="9_hb2m2"]
+[ext_resource type="Texture2D" uid="uid://70tepkam2syc" path="res://Assets/UI/breaker.png" id="10_fm8l8"]
+
+[node name="Fundo" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(24, -2)
+texture = ExtResource("2_22bns")
+
+[node name="BalanceBar" type="Sprite2D" parent="."]
+position = Vector2(-637, -270)
+scale = Vector2(0.5, 0.559524)
+texture = ExtResource("4_d24uq")
+
+[node name="UnbalanceBar" type="Sprite2D" parent="."]
+position = Vector2(657, -279)
+scale = Vector2(0.439484, 0.442982)
+texture = ExtResource("5_7k4fy")
+
+[node name="Balance" type="Sprite2D" parent="."]
+position = Vector2(658, -278)
+scale = Vector2(0.415743, 0.45045)
+texture = ExtResource("6_wdd78")
+
+[node name="Unibalance" type="Sprite2D" parent="."]
+position = Vector2(-635, -266)
+scale = Vector2(0.429687, 0.490991)
+texture = ExtResource("7_nf0jx")
+
+[node name="ShadowProtagonist" type="Sprite2D" parent="."]
+position = Vector2(683, 121)
+scale = Vector2(0.195782, 0.157364)
+texture = ExtResource("8_da0dw")
+
+[node name="LightProtagonist" type="Sprite2D" parent="."]
+position = Vector2(-653, 96)
+scale = Vector2(0.13838, 0.115953)
+texture = ExtResource("9_hb2m2")
+
+[node name="Breaker" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, -358)
+scale = Vector2(0.0968533, 0.0789352)
+texture = ExtResource("10_fm8l8")
