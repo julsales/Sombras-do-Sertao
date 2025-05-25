@@ -1,19 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://bfpy6qwd4ki8c"]
+[gd_scene load_steps=14 format=3 uid="uid://bfpy6qwd4ki8c"]
 
 [ext_resource type="Script" uid="uid://b60cmcucmlmqm" path="res://Scripts/Main.gd" id="1_7mycd"]
 [ext_resource type="PackedScene" uid="uid://c2u0lxx6qu6c1" path="res://Scenes/Fundo.tscn" id="2_efxa6"]
 [ext_resource type="Script" uid="uid://0q0tbiapypgg" path="res://Scripts/CardManager.gd" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bsv2ox1kwotyi" path="res://Scenes/EnemyCardSlot.tscn" id="3_efxa6"]
-[ext_resource type="PackedScene" uid="uid://dn17xu8mt3iu1" path="res://Scenes/CardSlot.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" path="res://Scenes/CardSlot.tscn" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://dywl10glq7ymj" path="res://Scripts/UI.gd" id="4_lquwl"]
-[ext_resource type="Script" uid="uid://dmajs5mf6im7i" path="res://Scripts/BattleManager.gd" id="4_w48qg"]
 [ext_resource type="Script" uid="uid://djme8ltff1kcp" path="res://Scripts/PlayerHand.gd" id="5_7mycd"]
-[ext_resource type="PackedScene" uid="uid://bjawn0eg4gf6p" path="res://Scenes/Deck.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bjawn0eg4gf6p" path="res://Scenes/deck.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://cpvfocks5cygh" path="res://Scripts/Deck.gd" id="6_kek77"]
-[ext_resource type="Script" uid="uid://binbtdjkhpa16" path="res://Scripts/InputManager.gd" id="7_4c57u"]
-[ext_resource type="Script" uid="uid://c5vglsm5cmiga" path="res://Scripts/EnemyDeck.gd" id="10_vivmo"]
+[ext_resource type="Script" path="res://Scripts/InputManager.gd" id="7_4c57u"]
+[ext_resource type="Script" path="res://Scripts/EnemyDeck.gd" id="10_vivmo"]
 [ext_resource type="Texture2D" uid="uid://nhmp1010qyy7" path="res://Assets/Images/Card Deck/Deck Sombras.png" id="11_dg77c"]
-[ext_resource type="Script" uid="uid://c35nw3nyapacm" path="res://Scripts/EnemyHand.gd" id="12_2cqfq"]
+[ext_resource type="Script" path="res://Scripts/EnemyHand.gd" id="12_2cqfq"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7mycd")
@@ -25,13 +24,14 @@ script = ExtResource("7_4c57u")
 script = ExtResource("2_h2yge")
 
 [node name="BattleManager" type="Node" parent="."]
-script = ExtResource("4_w48qg")
 
 [node name="BattleTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
 
-[node name="CardSlots" type="Node2D" parent="."]
+[node name="CardSlots" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="CardSlot" parent="CardSlots" instance=ExtResource("4_1bvp3")]
 position = Vector2(969, 628)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2u0lxx6qu6c1"]
+[gd_scene load_steps=16 format=3 uid="uid://c2u0lxx6qu6c1"]
 
 [ext_resource type="Texture2D" uid="uid://l4g3i6bxuto6" path="res://Assets/UI/background.png" id="2_22bns"]
 [ext_resource type="Texture2D" uid="uid://cvb3oll5gg5xj" path="res://Assets/UI/BalanceBar.png" id="4_d24uq"]
@@ -6,58 +6,33 @@
 [ext_resource type="Texture2D" uid="uid://dv1h8i5aou32l" path="res://Assets/UI/Balance.png" id="6_wdd78"]
 [ext_resource type="Texture2D" uid="uid://c2606g8ovohde" path="res://Assets/UI/Unibalance.png" id="7_nf0jx"]
 [ext_resource type="Texture2D" uid="uid://i7tk1rqdcttw" path="res://Assets/UI/shadow protagonist.png" id="8_da0dw"]
+[ext_resource type="Texture2D" uid="uid://d0to1yyn1dl3f" path="res://Assets/UI/names.png" id="9_7jg37"]
 [ext_resource type="Texture2D" uid="uid://b34gqx1gvncw8" path="res://Assets/UI/light protagonist.png" id="9_hb2m2"]
+[ext_resource type="Texture2D" uid="uid://3xwjk20von6y" path="res://Assets/UI/Icon1.png" id="10_07kdr"]
 [ext_resource type="Texture2D" uid="uid://70tepkam2syc" path="res://Assets/UI/breaker.png" id="10_fm8l8"]
+[ext_resource type="Texture2D" uid="uid://p2kby1rdpnb6" path="res://Assets/UI/Deckcards.png" id="11_22bns"]
+[ext_resource type="Texture2D" uid="uid://bsb2a0j2j81da" path="res://Assets/UI/Group 11.png" id="12_e3g7h"]
+[ext_resource type="Texture2D" uid="uid://m08b7tkyyutg" path="res://Assets/UI/Group 8.png" id="13_7k4fy"]
+[ext_resource type="Texture2D" uid="uid://tobovgm6fen3" path="res://Assets/UI/Group 7.png" id="14_wdd78"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0mck7"]
 
 [node name="Fundo" type="Node2D"]
 metadata/_edit_lock_ = true
 
-[node name="HpBar" type="Node2D" parent="."]
-position = Vector2(-1, 2)
-
-[node name="Unbalance" type="Node2D" parent="HpBar"]
-
-[node name="UnbalanceSprite" type="Sprite2D" parent="HpBar/Unbalance"]
-position = Vector2(-714.5, -436.5)
-scale = Vector2(0.5, 0.559524)
-texture = ExtResource("4_d24uq")
-
-[node name="UnbalanceSpriteBar" type="Sprite2D" parent="HpBar/Unbalance"]
-z_index = 1
-position = Vector2(-713.5, -437.5)
-scale = Vector2(0.429687, 0.490991)
-texture = ExtResource("7_nf0jx")
-
-[node name="Balance" type="Node2D" parent="HpBar"]
-
-[node name="BalanceSprite" type="Sprite2D" parent="HpBar/Balance"]
-position = Vector2(708.5, -438.25)
-scale = Vector2(0.439484, 0.442982)
-texture = ExtResource("5_7k4fy")
-
-[node name="BalanceSpriteBar" type="Sprite2D" parent="HpBar/Balance"]
-z_index = 1
-position = Vector2(711.5, -433.25)
-scale = Vector2(0.425166, 0.495495)
-texture = ExtResource("6_wdd78")
-
 [node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0.825044, 0.757908, 0.879024, 1)
-show_behind_parent = true
 position = Vector2(-3, 0)
 texture = ExtResource("2_22bns")
 metadata/_edit_lock_ = true
 
 [node name="LightProtagonist" type="Sprite2D" parent="Background"]
-position = Vector2(-707, 32)
-scale = Vector2(0.153634, 0.138572)
+position = Vector2(-656, 38.179)
+scale = Vector2(0.136373, 0.131393)
 texture = ExtResource("9_hb2m2")
 
 [node name="ShadowProtagonist" type="Sprite2D" parent="Background"]
-position = Vector2(697, 67)
-scale = Vector2(0.195782, 0.172432)
+position = Vector2(691, 41)
+scale = Vector2(0.195782, 0.179735)
 texture = ExtResource("8_da0dw")
 
 [node name="Breaker" type="Sprite2D" parent="Background"]
@@ -65,3 +40,77 @@ material = SubResource("CanvasItemMaterial_0mck7")
 position = Vector2(1, -354)
 scale = Vector2(0.0968533, 0.0789352)
 texture = ExtResource("10_fm8l8")
+
+[node name="HpBar" type="Node2D" parent="Background"]
+position = Vector2(2, 2)
+
+[node name="Unbalance" type="Node2D" parent="Background/HpBar"]
+
+[node name="UnbalanceSprite" type="Sprite2D" parent="Background/HpBar/Unbalance"]
+position = Vector2(-644, -370)
+scale = Vector2(0.5, 0.559524)
+texture = ExtResource("4_d24uq")
+
+[node name="UnbalanceSpriteBar" type="Sprite2D" parent="Background/HpBar/Unbalance"]
+z_index = 1
+position = Vector2(-642, -370)
+scale = Vector2(0.429687, 0.490991)
+texture = ExtResource("7_nf0jx")
+
+[node name="Balance" type="Node2D" parent="Background/HpBar"]
+
+[node name="BalanceSprite" type="Sprite2D" parent="Background/HpBar/Balance"]
+position = Vector2(703, -371)
+scale = Vector2(0.439484, 0.442982)
+texture = ExtResource("5_7k4fy")
+
+[node name="BalanceSpriteBar" type="Sprite2D" parent="Background/HpBar/Balance"]
+z_index = 1
+position = Vector2(704, -366)
+scale = Vector2(0.425166, 0.495495)
+texture = ExtResource("6_wdd78")
+
+[node name="Names" type="Sprite2D" parent="."]
+position = Vector2(702.969, 434.031)
+scale = Vector2(0.403331, 0.34086)
+texture = ExtResource("9_7jg37")
+
+[node name="Names2" type="Sprite2D" parent="."]
+position = Vector2(-702, 434)
+scale = Vector2(0.389066, 0.339595)
+texture = ExtResource("9_7jg37")
+
+[node name="Icon1" type="Sprite2D" parent="."]
+position = Vector2(513, 433)
+scale = Vector2(0.262215, 0.25)
+texture = ExtResource("10_07kdr")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(-533, 439)
+scale = Vector2(0.258958, 0.238354)
+texture = ExtResource("10_07kdr")
+
+[node name="Names3" type="Sprite2D" parent="."]
+position = Vector2(-4, -476.75)
+scale = Vector2(0.377919, 0.385838)
+texture = ExtResource("9_7jg37")
+
+[node name="Deckcards" type="Sprite2D" parent="."]
+position = Vector2(-3, -245)
+scale = Vector2(0.111716, 0.0702082)
+texture = ExtResource("11_22bns")
+
+[node name="Group11" type="Sprite2D" parent="."]
+position = Vector2(-882, -480)
+scale = Vector2(0.255586, 0.25277)
+texture = ExtResource("12_e3g7h")
+
+[node name="Group8" type="Sprite2D" parent="."]
+position = Vector2(872, -491)
+scale = Vector2(0.234637, 0.22784)
+texture = ExtResource("13_7k4fy")
+
+[node name="Group7" type="Sprite2D" parent="."]
+position = Vector2(774, -491)
+scale = Vector2(0.205182, 0.226454)
+texture = ExtResource("14_wdd78")

@@ -8,7 +8,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 0
-offset_right = 398.0
-offset_bottom = 192.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="AspectRatioContainer"]
+layout_mode = 2
