@@ -18,7 +18,7 @@ size = Vector2(1447.44, 2063.14)
 script = ExtResource("1_r3qn0")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(24, -2)
+position = Vector2(1, 6)
 texture = ExtResource("7_j8f3g")
 
 [node name="CardSlot" type="Sprite2D" parent="."]
@@ -69,3 +69,5 @@ texture = ExtResource("9_6sovm")
 position = Vector2(-4.76837e-07, -358)
 scale = Vector2(0.0968533, 0.0789352)
 texture = ExtResource("10_6sovm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
