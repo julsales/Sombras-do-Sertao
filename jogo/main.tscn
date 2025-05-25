@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://bfpy6qwd4ki8c"]
 
 [ext_resource type="Script" uid="uid://b60cmcucmlmqm" path="res://Scripts/Main.gd" id="1_7mycd"]
-[ext_resource type="Texture2D" uid="uid://yuxc6upuvaow" path="res://Assets/UI/ImagemGameConfig.jpg" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://yuxc6upuvaow" path="res://Assets/ImagemGameConfig.jpg" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://0q0tbiapypgg" path="res://Scripts/CardManager.gd" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://sfkipi1ftlay" path="res://Scenes/CardSlot.tscn" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://dywl10glq7ymj" path="res://Scripts/UI.gd" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://djme8ltff1kcp" path="res://Scripts/PlayerHand.gd" id="5_7mycd"]
-[ext_resource type="PackedScene" uid="uid://bjawn0eg4gf6p" path="res://Scenes/Deck.tscn" id="5_lquwl"]
-[ext_resource type="Script" uid="uid://cpvfocks5cygh" path="res://Scripts/Deck.gd" id="6_kek77"]
-[ext_resource type="Script" uid="uid://binbtdjkhpa16" path="res://Scripts/InputManager.gd" id="7_4c57u"]
+[ext_resource type="PackedScene" uid="uid://bjawn0eg4gf6p" path="res://Scenes/deck.tscn" id="5_lquwl"]
+[ext_resource type="Script" path="res://Scripts/Deck.gd" id="6_kek77"]
+[ext_resource type="Script" path="res://Scripts/InputManager.gd" id="7_4c57u"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7mycd")
