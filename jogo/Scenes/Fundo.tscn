@@ -14,7 +14,38 @@
 [node name="Fundo" type="Node2D"]
 metadata/_edit_lock_ = true
 
+[node name="HpBar" type="Node2D" parent="."]
+position = Vector2(-1, 2)
+
+[node name="Unbalance" type="Node2D" parent="HpBar"]
+
+[node name="UnbalanceSprite" type="Sprite2D" parent="HpBar/Unbalance"]
+position = Vector2(-714.5, -436.5)
+scale = Vector2(0.5, 0.559524)
+texture = ExtResource("4_d24uq")
+
+[node name="UnbalanceSpriteBar" type="Sprite2D" parent="HpBar/Unbalance"]
+z_index = 1
+position = Vector2(-713.5, -437.5)
+scale = Vector2(0.429687, 0.490991)
+texture = ExtResource("7_nf0jx")
+
+[node name="Balance" type="Node2D" parent="HpBar"]
+
+[node name="BalanceSprite" type="Sprite2D" parent="HpBar/Balance"]
+position = Vector2(708.5, -438.25)
+scale = Vector2(0.439484, 0.442982)
+texture = ExtResource("5_7k4fy")
+
+[node name="BalanceSpriteBar" type="Sprite2D" parent="HpBar/Balance"]
+z_index = 1
+position = Vector2(711.5, -433.25)
+scale = Vector2(0.425166, 0.495495)
+texture = ExtResource("6_wdd78")
+
 [node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.825044, 0.757908, 0.879024, 1)
+show_behind_parent = true
 position = Vector2(-3, 0)
 texture = ExtResource("2_22bns")
 metadata/_edit_lock_ = true
@@ -34,32 +65,3 @@ material = SubResource("CanvasItemMaterial_0mck7")
 position = Vector2(1, -354)
 scale = Vector2(0.0968533, 0.0789352)
 texture = ExtResource("10_fm8l8")
-
-[node name="HpBar" type="Node2D" parent="Background"]
-position = Vector2(2, 2)
-
-[node name="Unbalance" type="Node2D" parent="Background/HpBar"]
-
-[node name="UnbalanceSprite" type="Sprite2D" parent="Background/HpBar/Unbalance"]
-position = Vector2(-714.5, -436.5)
-scale = Vector2(0.5, 0.559524)
-texture = ExtResource("4_d24uq")
-
-[node name="UnbalanceSpriteBar" type="Sprite2D" parent="Background/HpBar/Unbalance"]
-z_index = 1
-position = Vector2(-713.5, -437.5)
-scale = Vector2(0.429687, 0.490991)
-texture = ExtResource("7_nf0jx")
-
-[node name="Balance" type="Node2D" parent="Background/HpBar"]
-
-[node name="BalanceSprite" type="Sprite2D" parent="Background/HpBar/Balance"]
-position = Vector2(708.5, -438.25)
-scale = Vector2(0.439484, 0.442982)
-texture = ExtResource("5_7k4fy")
-
-[node name="BalanceSpriteBar" type="Sprite2D" parent="Background/HpBar/Balance"]
-z_index = 1
-position = Vector2(711.5, -433.25)
-scale = Vector2(0.425166, 0.495495)
-texture = ExtResource("6_wdd78")
