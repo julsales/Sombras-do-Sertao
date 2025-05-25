@@ -18,8 +18,7 @@ size = Vector2(1447.44, 2063.14)
 script = ExtResource("1_r3qn0")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(16.5, 49)
-scale = Vector2(1.02135, 1.02407)
+position = Vector2(24, -2)
 texture = ExtResource("7_j8f3g")
 
 [node name="CardSlot" type="Sprite2D" parent="."]
