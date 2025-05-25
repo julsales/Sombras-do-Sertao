@@ -30,7 +30,8 @@ window/vsync/vsync_mode=0
 [file_customization]
 
 folder_colors={
-"res://Assets/Images/": "red"
+"res://Assets/Images/": "red",
+"res://Assets/UI/": "pink"
 }
 
 [gui]

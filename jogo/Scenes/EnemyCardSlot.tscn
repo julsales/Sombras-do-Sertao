@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsv2ox1kwotyi"]
 
-[ext_resource type="Script" uid="uid://dxpl673dhrvrg" path="res://Scripts/EnemyCardSlot.gd" id="1_338b4"]
+[ext_resource type="Script" path="res://Scenes/EnemyCardSlot.gd" id="1_338b4"]
 [ext_resource type="Texture2D" uid="uid://c0ghuv8pp0scw" path="res://Assets/Images/Card Slot/card_slot.png" id="2_pa7lj"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_338b4"]
@@ -11,7 +11,6 @@ material = SubResource("CanvasItemMaterial_338b4")
 script = ExtResource("1_338b4")
 
 [node name="CardSlot" type="Sprite2D" parent="."]
-modulate = Color(0.0808727, 0.114012, 0.315976, 1)
 z_index = -3
 scale = Vector2(0.13, 0.125)
 texture = ExtResource("2_pa7lj")
