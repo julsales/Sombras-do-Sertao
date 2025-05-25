@@ -26,13 +26,13 @@ texture = ExtResource("2_22bns")
 metadata/_edit_lock_ = true
 
 [node name="LightProtagonist" type="Sprite2D" parent="Background"]
-position = Vector2(-656, 51)
-scale = Vector2(0.136373, 0.127119)
+position = Vector2(-656, 38.179)
+scale = Vector2(0.136373, 0.131393)
 texture = ExtResource("9_hb2m2")
 
 [node name="ShadowProtagonist" type="Sprite2D" parent="Background"]
-position = Vector2(697, 67)
-scale = Vector2(0.195782, 0.172432)
+position = Vector2(697, 51.2266)
+scale = Vector2(0.195782, 0.179735)
 texture = ExtResource("8_da0dw")
 
 [node name="Breaker" type="Sprite2D" parent="Background"]
