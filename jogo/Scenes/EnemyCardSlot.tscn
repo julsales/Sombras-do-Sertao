@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsv2ox1kwotyi"]
 
-[ext_resource type="Script" uid="uid://dxpl673dhrvrg" path="res://Scenes/EnemyCardSlot.gd" id="1_338b4"]
+[ext_resource type="Script" path="res://Scenes/EnemyCardSlot.gd" id="1_338b4"]
 [ext_resource type="Texture2D" uid="uid://c0ghuv8pp0scw" path="res://Assets/Images/Card Slot/card_slot.png" id="2_pa7lj"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_338b4"]

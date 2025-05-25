@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2u0lxx6qu6c1"]
+[gd_scene load_steps=12 format=3 uid="uid://c2u0lxx6qu6c1"]
 
 [ext_resource type="Texture2D" uid="uid://l4g3i6bxuto6" path="res://Assets/UI/background.png" id="2_22bns"]
 [ext_resource type="Texture2D" uid="uid://cvb3oll5gg5xj" path="res://Assets/UI/BalanceBar.png" id="4_d24uq"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dv1h8i5aou32l" path="res://Assets/UI/Balance.png" id="6_wdd78"]
 [ext_resource type="Texture2D" uid="uid://c2606g8ovohde" path="res://Assets/UI/Unibalance.png" id="7_nf0jx"]
 [ext_resource type="Texture2D" uid="uid://i7tk1rqdcttw" path="res://Assets/UI/shadow protagonist.png" id="8_da0dw"]
+[ext_resource type="Texture2D" uid="uid://d0to1yyn1dl3f" path="res://Assets/UI/names.png" id="9_7jg37"]
 [ext_resource type="Texture2D" uid="uid://b34gqx1gvncw8" path="res://Assets/UI/light protagonist.png" id="9_hb2m2"]
+[ext_resource type="Texture2D" uid="uid://3xwjk20von6y" path="res://Assets/UI/Icon1.png" id="10_07kdr"]
 [ext_resource type="Texture2D" uid="uid://70tepkam2syc" path="res://Assets/UI/breaker.png" id="10_fm8l8"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0mck7"]
@@ -20,8 +22,8 @@ texture = ExtResource("2_22bns")
 metadata/_edit_lock_ = true
 
 [node name="LightProtagonist" type="Sprite2D" parent="Background"]
-position = Vector2(-707, 32)
-scale = Vector2(0.153634, 0.138572)
+position = Vector2(-656, 51)
+scale = Vector2(0.136373, 0.127119)
 texture = ExtResource("9_hb2m2")
 
 [node name="ShadowProtagonist" type="Sprite2D" parent="Background"]
@@ -63,3 +65,23 @@ z_index = 1
 position = Vector2(711.5, -433.25)
 scale = Vector2(0.425166, 0.495495)
 texture = ExtResource("6_wdd78")
+
+[node name="Names" type="Sprite2D" parent="."]
+position = Vector2(702.969, 434.031)
+scale = Vector2(0.403331, 0.34086)
+texture = ExtResource("9_7jg37")
+
+[node name="Names2" type="Sprite2D" parent="."]
+position = Vector2(-702, 434)
+scale = Vector2(0.389066, 0.339595)
+texture = ExtResource("9_7jg37")
+
+[node name="Icon1" type="Sprite2D" parent="."]
+position = Vector2(513, 433)
+scale = Vector2(0.262215, 0.25)
+texture = ExtResource("10_07kdr")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(-533, 439)
+scale = Vector2(0.258958, 0.238354)
+texture = ExtResource("10_07kdr")
