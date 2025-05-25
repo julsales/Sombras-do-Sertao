@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfpy6qwd4ki8c"]
+[gd_scene load_steps=12 format=3 uid="uid://bfpy6qwd4ki8c"]
 
 [ext_resource type="Script" uid="uid://b60cmcucmlmqm" path="res://Scripts/Main.gd" id="1_7mycd"]
+[ext_resource type="PackedScene" uid="uid://c2u0lxx6qu6c1" path="res://Scenes/Fundo.tscn" id="2_efxa6"]
 [ext_resource type="Script" uid="uid://0q0tbiapypgg" path="res://Scripts/CardManager.gd" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bsv2ox1kwotyi" path="res://Scenes/EnemyCardSlot.tscn" id="3_efxa6"]
 [ext_resource type="PackedScene" uid="uid://sfkipi1ftlay" path="res://Scenes/CardSlot.tscn" id="4_1bvp3"]
@@ -13,6 +14,10 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7mycd")
+
+[node name="Fundo" parent="." instance=ExtResource("2_efxa6")]
+z_index = -4
+position = Vector2(938, 537)
 
 [node name="CardSlots" type="Node2D" parent="."]
 

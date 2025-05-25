@@ -15,37 +15,37 @@
 position = Vector2(24, -2)
 texture = ExtResource("2_22bns")
 
-[node name="BalanceBar" type="Sprite2D" parent="."]
-position = Vector2(-637, -270)
+[node name="BalanceBar" type="Sprite2D" parent="Background"]
+position = Vector2(-661, -268)
 scale = Vector2(0.5, 0.559524)
 texture = ExtResource("4_d24uq")
 
-[node name="UnbalanceBar" type="Sprite2D" parent="."]
-position = Vector2(657, -279)
+[node name="Balance" type="Sprite2D" parent="Background/BalanceBar"]
+position = Vector2(2590, -14.2979)
+scale = Vector2(0.831486, 0.805059)
+texture = ExtResource("6_wdd78")
+
+[node name="UnbalanceBar" type="Sprite2D" parent="Background"]
+position = Vector2(633, -277)
 scale = Vector2(0.439484, 0.442982)
 texture = ExtResource("5_7k4fy")
 
-[node name="Balance" type="Sprite2D" parent="."]
-position = Vector2(658, -278)
-scale = Vector2(0.415743, 0.45045)
-texture = ExtResource("6_wdd78")
-
-[node name="Unibalance" type="Sprite2D" parent="."]
-position = Vector2(-635, -266)
-scale = Vector2(0.429687, 0.490991)
+[node name="Unibalance" type="Sprite2D" parent="Background/UnbalanceBar"]
+position = Vector2(-2939.81, 29.3466)
+scale = Vector2(0.977708, 1.10838)
 texture = ExtResource("7_nf0jx")
-
-[node name="ShadowProtagonist" type="Sprite2D" parent="."]
-position = Vector2(683, 121)
-scale = Vector2(0.195782, 0.157364)
-texture = ExtResource("8_da0dw")
 
 [node name="LightProtagonist" type="Sprite2D" parent="."]
 position = Vector2(-653, 96)
 scale = Vector2(0.13838, 0.115953)
 texture = ExtResource("9_hb2m2")
 
+[node name="ShadowProtagonist" type="Sprite2D" parent="."]
+position = Vector2(683, 121)
+scale = Vector2(0.195782, 0.157364)
+texture = ExtResource("8_da0dw")
+
 [node name="Breaker" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, -358)
+position = Vector2(3, -419)
 scale = Vector2(0.0968533, 0.0789352)
 texture = ExtResource("10_fm8l8")
