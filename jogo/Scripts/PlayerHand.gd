@@ -2,8 +2,8 @@ extends Node2D
 
 #Path das card scene
 #Espaço entre as cartas
-const CARD_WIDTH = 200
-const HAND_Y_POSITION = 800
+const CARD_WIDTH = 180
+const HAND_Y_POSITION = 900
 const DEFAULT_CARD_SPEED = 0.1
 var player_hand = []
 var center_screen_x

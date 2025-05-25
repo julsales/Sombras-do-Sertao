@@ -4,10 +4,13 @@ var dragging_card
 var is_hovering_on_card
 var player_hand_reference
 var card_preview
+var played_card_this_turn
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_CARD_SLOT = 2
 const DEFAULT_CARD_SPEED = 0.1
-
+const DEFAULT_CARD_SCALE = 1
+const DEFAULT_CARD_SCALE_BIGGER = 1.05
+const DEFAULT_CARD_SCALE_SMALLER = 0.75
 # Called when the node enters the scene tree for the first time.
 #Pega o tamanho da tela do jogo
 func _ready() -> void:
@@ -40,20 +43,26 @@ func _process(delta: float) -> void:
 
 func start_drag(card):
 	dragging_card = card
-	card.scale = Vector2(1,1)
+	card.scale = Vector2(DEFAULT_CARD_SCALE_BIGGER,DEFAULT_CARD_SCALE_BIGGER)
 	
 func finish_drag():
-	dragging_card.scale = Vector2(1.05,1.05)
+	dragging_card.scale = Vector2(DEFAULT_CARD_SCALE ,DEFAULT_CARD_SCALE)
 	var card_slot_found = card_slot_raycast_check()
 	if card_slot_found and not card_slot_found.card_in_slot:
-		#Carta foi colocada em um card slot vazio
-		player_hand_reference.remove_card_from_hand(dragging_card)
-		dragging_card.position = card_slot_found.position
-		dragging_card.get_node("Area2D/CollisionShape2D").disabled = true
-		card_slot_found.card_in_slot = true
-	else:
-		player_hand_reference.add_card_to_hand(dragging_card, DEFAULT_CARD_SPEED)
-		
+		if dragging_card.card_type == card_slot_found.card_slot_type: 
+			if !played_card_this_turn:
+			#Carta foi colocada em um card slot vazio
+				dragging_card.scale = Vector2(DEFAULT_CARD_SCALE_SMALLER,DEFAULT_CARD_SCALE_SMALLER)
+				dragging_card.z_index = -1
+				is_hovering_on_card = false
+				dragging_card.card_in_slot= card_slot_found
+				player_hand_reference.remove_card_from_hand(dragging_card)
+				dragging_card.position = card_slot_found.position
+				dragging_card.get_node("Area2D/CollisionShape2D").disabled = true
+				card_slot_found.card_in_slot = true
+				dragging_card = null
+				return
+	player_hand_reference.add_card_to_hand(dragging_card, DEFAULT_CARD_SPEED)
 	dragging_card = null
 
 #conecta os sinais mandados por card.gd pra esse script, melhor para garantir que todas as cartas vão funcionar da mesma forma
@@ -62,7 +71,6 @@ func connect_card_signals(card):
 	card.connect("hovered_off", hover_off_card)
 	
 func left_click_released():
-	print("funciono")
 	if dragging_card:
 		finish_drag()
 	
@@ -73,20 +81,21 @@ func hover_over_card(card):
 	
 
 func hover_off_card(card):
-	if !dragging_card:
-		var hover_new_card = card_raycast_check()
-		if hover_new_card:
-			highlight_card(hover_new_card, true)
-		else:
-			is_hovering_on_card = false
-			highlight_card(card,false)
+	if !card.card_in_slot: 
+		if !dragging_card:
+			var hover_new_card = card_raycast_check()
+			if hover_new_card:
+				highlight_card(hover_new_card, true)
+			else:
+				is_hovering_on_card = false
+				highlight_card(card,false)
 	
 func highlight_card(card, hovered):
 	if hovered:
-		card.scale = Vector2(1.05,1.05)
+		card.scale = Vector2(DEFAULT_CARD_SCALE_BIGGER ,DEFAULT_CARD_SCALE_BIGGER)
 		card.z_index = 2
 	else:
-		card.scale = Vector2(1,1)
+		card.scale = Vector2(DEFAULT_CARD_SCALE,DEFAULT_CARD_SCALE)
 		card.z_index = 1
 		
 #Checa se a posição do mouse está na da posição do slot e retorna o id específico do slot
