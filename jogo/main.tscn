@@ -34,12 +34,12 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="CardSlot" parent="CardSlots" instance=ExtResource("4_1bvp3")]
-position = Vector2(969, 628)
-scale = Vector2(0.9, 0.9)
+position = Vector2(970, 660)
+scale = Vector2(0.85, 0.85)
 
 [node name="EnemyCardSlot" parent="CardSlots" instance=ExtResource("3_efxa6")]
-position = Vector2(964, 420)
-scale = Vector2(0.9, 0.9)
+position = Vector2(970, 460)
+scale = Vector2(0.85, 0.85)
 script = null
 
 [node name="EnemyHand" type="Node2D" parent="."]

@@ -27,7 +27,7 @@ extends Node2D
 
 const CARD_SCENE_PATH = "res://Scenes/EnemyCard.tscn"
 const CARD_DRAW_SPEED = 0.3
-const STARTING_HAND_SIZE = 4
+const STARTING_HAND_SIZE = 5
 
 var enemy_deck = ["Perna Cabeluda", "Perna Cabeluda", "Perna Cabeluda", "Perna Cabeluda", "Perna Cabeluda"]
 var card_db
